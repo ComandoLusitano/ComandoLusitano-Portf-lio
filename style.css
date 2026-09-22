@@ -1,0 +1,413 @@
+/* ========================================
+   ComandoLusitano Portfolio
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #08080c;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ---------- Background ---------- */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: rgba(88, 101, 242, 0.12);
+    filter: blur(120px);
+    border-radius: 50%;
+    top: -150px;
+    left: -150px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    background: rgba(120, 70, 255, 0.08);
+    filter: blur(120px);
+    border-radius: 50%;
+    bottom: -150px;
+    right: -150px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ---------- General ---------- */
+
+.container {
+    width: min(1100px, 90%);
+    margin: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    color: #92929d;
+    margin-bottom: 45px;
+}
+
+/* ---------- Navigation ---------- */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    background: rgba(8, 8, 12, 0.75);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+}
+
+.nav-container {
+    width: min(1100px, 90%);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #5865f2;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #a7a7b2;
+    transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 120px;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero-small {
+    color: #5865f2;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 8vw, 82px);
+    line-height: 1.05;
+    letter-spacing: -3px;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #5865f2;
+}
+
+.hero-description {
+    max-width: 650px;
+    color: #a1a1ac;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.25s ease;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background: #5865f2;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: #4752c4;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border-color: #2c2c35;
+    color: #ffffff;
+    background: #111116;
+}
+
+.btn-secondary:hover {
+    border-color: #5865f2;
+    transform: translateY(-2px);
+}
+
+/* ---------- Projects ---------- */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    background: rgba(17, 17, 22, 0.8);
+    border: 1px solid #24242d;
+    border-radius: 12px;
+    padding: 25px;
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #5865f2;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.project-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(88, 101, 242, 0.12);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: #92929d;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.project-link {
+    color: #5865f2;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Skills ---------- */
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill {
+    background: #111116;
+    border: 1px solid #282831;
+    padding: 10px 17px;
+    border-radius: 8px;
+    color: #c8c8d0;
+    transition: 0.25s ease;
+}
+
+.skill:hover {
+    border-color: #5865f2;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* ---------- About ---------- */
+
+.about-box {
+    max-width: 750px;
+    background: #111116;
+    border: 1px solid #24242d;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.about-box p {
+    color: #a1a1ac;
+    margin-bottom: 15px;
+}
+
+.about-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* ---------- Contact ---------- */
+
+.contact-box {
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        rgba(88, 101, 242, 0.12),
+        rgba(120, 70, 255, 0.05)
+    );
+    border: 1px solid #28283a;
+    border-radius: 15px;
+    padding: 60px 30px;
+}
+
+.contact-box h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.contact-box p {
+    color: #9999a5;
+    margin-bottom: 30px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: #111116;
+    border: 1px solid #292933;
+    transition: 0.25s ease;
+}
+
+.contact-link:hover {
+    border-color: #5865f2;
+    transform: translateY(-2px);
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    border-top: 1px solid #1c1c23;
+    padding: 30px 0;
+    text-align: center;
+    color: #6f6f7a;
+    font-size: 14px;
+}
+
+/* ---------- Scrollbar ---------- */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #08080c;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #292933;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5865f2;
+}
+
+/* ---------- Selection ---------- */
+
+::selection {
+    background: #5865f2;
+    color: #ffffff;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    section {
+        padding: 75px 0;
+    }
+
+    .hero {
+        min-height: 90vh;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .contact-box h2 {
+        font-size: 30px;
+    }
+}
