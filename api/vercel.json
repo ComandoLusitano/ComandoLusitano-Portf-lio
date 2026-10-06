@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/marcacoes",
+      "destination": "/marcacoes.html"
+    }
+  ]
+}
